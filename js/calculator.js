@@ -80,9 +80,13 @@ const calculate = (operator, number1, number2) => {
 const numberClickHandler = (e) => {
     let clickedNumber = e.target.innerHTML;
     let currentLabel = getOutputLabel();
+    let lastCharAtLabel = currentLabel.slice(-1);
+
+    // to avoid multiple click of '.' character 
+    if(lastCharAtLabel === '.' && clickedNumber === '.') return;
 
     if (activeOperation === null) {
-        currentLabel !== '0' ? currentLabel += clickedNumber : currentLabel = clickedNumber;
+        currentLabel !== '0' ? currentLabel += clickedNumber : (clickedNumber === '.' ? currentLabel += clickedNumber : currentLabel = clickedNumber);
         setOutputLabel(currentLabel);
         return;
     }
