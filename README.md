@@ -25,6 +25,7 @@ Simple IOS Calculator App with Vanilla Javascript
 - [x] Can Calculate Arithmetic Equations
 - [x] Can Chain Arithmetic Equations
 - [x] Extra Get Remainder Functionality
+- [x] Simulated IOS Calculator without Equation History
 
 <br/>
 
