@@ -76,6 +76,7 @@ const calculate = (operator, number1, number2) => {
     // JavaScript uses IEEE 754 double precision floating-point numbers (see ECMA-262) and they cannot accurately represent all decimal fractions
     // To solve this issue: https://stackoverflow.com/questions/44949148/node-giving-strange-output-on-sum-of-particular-float-digits/44949594#44949594
     result = Math.round(100 * result) / 100;
+
     setOutputLabel(result);
     previousLabelNumber = result;
 }
@@ -83,10 +84,10 @@ const calculate = (operator, number1, number2) => {
 const numberClickHandler = (e) => {
     let clickedNumber = e.target.innerHTML;
     let currentLabel = getOutputLabel();
-    let lastCharAtLabel = currentLabel.slice(-1);
+    //let lastCharAtLabel = currentLabel.slice(-1);
 
     // to avoid multiple click of '.' character 
-    if(lastCharAtLabel === '.' && clickedNumber === '.') return;
+    if(currentLabel.includes('.') && clickedNumber === '.') return;
 
     if (activeOperation === null) {
         currentLabel !== '0' ? currentLabel += clickedNumber : (clickedNumber === '.' ? currentLabel += clickedNumber : currentLabel = clickedNumber);
