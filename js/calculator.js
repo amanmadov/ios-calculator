@@ -29,8 +29,6 @@ let isMultiDigitNumber = false;
 const resetVariables = () => {
     activeOperation = null;
     previousOperation = null;
-    currentLabelNumber = undefined;
-    previousLabelNumber = undefined;
     isMultiDigitNumber = false;
 }
 
