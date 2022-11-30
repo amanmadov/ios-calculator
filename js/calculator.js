@@ -20,18 +20,18 @@ const actionButtons = document.querySelectorAll('.btn.action.orange');
 // initial variables state
 let activeOperation = null;
 let previousOperation = null;
-let isMultiDigitNumber = false;
 let currentLabelNumber;
 let previousLabelNumber;
+let isMultiDigitNumber = false;
 
 //#region Helper Functions 
 
 const resetVariables = () => {
     activeOperation = null;
     previousOperation = null;
+    currentLabelNumber = undefined;
+    previousLabelNumber = undefined;
     isMultiDigitNumber = false;
-    currentLabelNumber;
-    previousLabelNumber;
 }
 
 const setOutputLabel = (number) => outputLabel.innerHTML = number.toString();
@@ -53,11 +53,11 @@ const negateOutputLabel = () => outputLabel.innerHTML !== '0' && (outputLabel.in
 
 //#region Operator Functions 
 
-    const add = (num1, num2) => Number(num1) + Number(num2);
-    const subtract = (num1, num2) => Number(num1) - Number(num2);
-    const multiply = (num1, num2) => Number(num1) * Number(num2);
-    const divide = (num1, num2) => Number(num1) / Number(num2);
-    const getRemainder = (num1, num2) => Number(num1) % Number(num2);
+const add = (num1, num2) => Number(num1) + Number(num2);
+const subtract = (num1, num2) => Number(num1) - Number(num2);
+const multiply = (num1, num2) => Number(num1) * Number(num2);
+const divide = (num1, num2) => Number(num1) / Number(num2);
+const getRemainder = (num1, num2) => Number(num1) % Number(num2);
 
 //#endregion
 
@@ -82,9 +82,9 @@ const calculate = (operator, number1, number2) => {
 }
 
 const numberClickHandler = (e) => {
+
     let clickedNumber = e.target.innerHTML;
     let currentLabel = getOutputLabel();
-    //let lastCharAtLabel = currentLabel.slice(-1);
 
     // to avoid multiple click of '.' character 
     if(currentLabel.includes('.') && clickedNumber === '.') return;
@@ -108,6 +108,7 @@ const numberClickHandler = (e) => {
 }
 
 const actionClickHandler = (e) => {
+
     clickedOperation = e.target.innerHTML;
     isMultiDigitNumber = false;
 
@@ -144,23 +145,23 @@ const equalsClickHandler = () => {
 
 //#region EventListeners 
 
-    // attaches eventhandler for click event of all number buttons
-    numberButtons.forEach(btn => btn.addEventListener('click', numberClickHandler));
+// attaches eventhandler for click event of all number buttons
+numberButtons.forEach(btn => btn.addEventListener('click', numberClickHandler));
 
-    // attaches eventhandler for click event of all operation buttons
-    actionButtons.forEach(btn => btn.addEventListener('click', actionClickHandler));
+// attaches eventhandler for click event of all operation buttons
+actionButtons.forEach(btn => btn.addEventListener('click', actionClickHandler));
 
-    // attaches eventhandler for AC button
-    clearButton.addEventListener('click', clearOutputLabel);
+// attaches eventhandler for AC button
+clearButton.addEventListener('click', clearOutputLabel);
 
-    // attaches eventhandler for +/- button
-    negateButton.addEventListener('click', negateOutputLabel);
+// attaches eventhandler for +/- button
+negateButton.addEventListener('click', negateOutputLabel);
 
-    // attaches eventhandler for = button
-    equalsButton.addEventListener('click', equalsClickHandler);
+// attaches eventhandler for = button
+equalsButton.addEventListener('click', equalsClickHandler);
 
-    // attaches eventhandler for . button
-    decimalButton.addEventListener('click', numberClickHandler);
+// attaches eventhandler for . button
+decimalButton.addEventListener('click', numberClickHandler);
 
 //#endregion
 
