@@ -1,9 +1,14 @@
 <div align="center">
 <p align="center"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></p>
 
-
-  <h2 align="center">Touro University Graduate School of Technology</h2>
-  <h3 align="center">MSIN 625 Advanced Web and Application Development Course Class Project</h3>
+<!-- PROJECT LOGO -->
+<br/>
+<div align="center">
+    <img src="images/touro-university-logo-blue.png" width=120 alt="Touro University Logo">
+    <h2 align="center">Graduate School of Technology</h2>
+    <h3 align="center">MSIN 625 Advanced Web and Application Development Course Class Project</h3>
+</div>
+  
 
   <p align="center">
     IOS Calculator App With Vanilla Javascript
